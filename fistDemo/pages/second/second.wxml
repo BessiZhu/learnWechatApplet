@@ -1,0 +1,11 @@
+<!--pages/second/second.wxml-->
+<!-- <text>pages/second/second.wxml</text> -->
+<view class="second-container">
+    <view class="img-box">
+        <image src="../../image/picture.png" />
+        <text class="des">我们谁也不是一双小白鞋，没必要活得那么百搭，迁就这个，又配合那个的，很多时候，还是得挑剔一点。</text>
+    </view>
+    <view class="name-box">
+        <text class="right">--乔克叔叔</text>
+    </view>
+</view>

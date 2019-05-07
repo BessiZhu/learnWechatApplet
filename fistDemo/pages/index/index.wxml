@@ -1,0 +1,7 @@
+<!--pages/index/index.wxml-->
+<!-- <text>pages/index/index.wxml</text> -->
+<view class="index-container">
+    <image class="avatar" src="../../image/avatar.png"/>
+    <text class="name">甜甜毒药</text>
+    <text class="des" bindtap="toSecond">欢迎登录微信小程序</text>
+</view>
