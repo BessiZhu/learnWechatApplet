@@ -1,0 +1,41 @@
+<!-- pages/article/article.wxml -->
+<!-- <text>pages/article/article.wxml</text> -->
+<view class="article-container">
+    <view class="title-box">
+        <text class="title">{{recommend.date}}</text>
+        <text class="des">
+            {{recommend.title}}
+        </text>
+        <image src="{{recommend.imgSrc}}" />
+    </view>
+    <view class="btn-box">
+        <text class="add">+</text>
+        <text wx:for="{{markType}}" wx:key="typeId">{{item.type}}</text>
+        <text>...</text>
+    </view>
+    <view class="card-box" wx:for="{{articleList}}" wx:key="id">
+        <view class="card-title">
+            <image src="{{item.markPeopleAvatar}}" />
+            <text>{{item.markPeople}}等{{item.markCount}}人mark了</text>
+        </view>
+        <view class="card-content">
+            <image mode="widthFix" src="{{item.articleImgSrc}}" />
+            <view class="inner-content">
+                <text>{{item.articleTitle}}</text>
+            </view>
+        </view>
+        <view class="btn-box card-footer">
+            <text>{{item.articleType}}</text>
+            <view class="right-btn">
+                <image bindtap="moreTap" 
+                data-articleType="{{item.articleType}}" 
+                class="more" src="../../image/icon/Icon_more.png" />
+                <button open-type="share">
+                    <image class="relay" src="../../image/icon/Icon_relay.png" />
+                </button>
+                <image bindtap="onlikeTap" data-articleIndex="{{index}}" wx:if="listLike[index]" class="circle" src="../../image/icon/Icon_circle.png" />
+                <image bindtap="onlikeTap" data-articleIndex="{{index}}" wx:else class="circle" src="../../image/icon/Icon_circle_fill.png" />
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/article/article",
     "pages/index/index",
     "pages/second/second"
   ]

@@ -1,0 +1,104 @@
+/* pages/article/article.wxss */
+.article-container{
+    padding:20rpx;
+}
+.title-box{
+    display: flex;
+    flex-direction:column;
+
+}
+.title-box .title{
+    position: relative;
+    font-size:48rpx;
+    letter-spacing: 8rpx;
+    padding:20rpx 0;
+    text-align: center;
+}
+.title-box .title::after{
+    content:"";
+    display: block;
+    position: absolute;
+    left:50%;
+    bottom:0;
+    transform: translateX(-80rpx);
+    width:160rpx;
+    height:4rpx;
+    background:#ccc;
+}
+.title-box .des{
+    font-size:28rpx;
+    line-height: 40rpx;
+    margin:30rpx 0;
+}
+.title-box image{
+    width:100%;
+}
+.btn-box{
+    margin:30rpx 0;
+}
+.btn-box text{
+    border:2rpx solid #000;
+    padding:10rpx 20rpx;
+    font-size: 28rpx;
+    margin-right:10rpx;
+    margin-bottom: 30rpx;
+    display: inline-block;
+}
+.btn-box text.add{
+    background:#000;
+    color:#fff;
+}
+.card-box{
+    background:#d8d8d8;
+    padding:30rpx 30rpx 0;
+}
+.card-box:last-of-type{
+    padding-bottom:30rpx;
+}
+.card-title, .card-content, .card-footer{
+    display: block;
+    background:#fff;
+    box-sizing: border-box;
+}
+.card-title{
+    padding:10rpx;
+}
+.card-title image{
+    width:80rpx;
+    height:80rpx;
+    border-radius: 50%;
+    vertical-align:middle;
+    margin-right:10rpx;
+}
+.card-title text{
+    font-size:28rpx;
+    color:#999;
+}
+.card-content > image{
+    width:100%;
+    box-sizing: border-box;
+}
+.card-content .inner-content{
+    padding:30rpx;
+}
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    margin:0;
+    padding:0 30rpx;
+}
+.right-btn image{
+    border:none;
+    width:40rpx;
+    height:40rpx;
+    padding:0 10rpx;
+}
+.right-btn button{
+    display: inline;
+    border:none;
+    background:transparent;
+    padding:0;
+}
+.right-btn button::after{
+    border:none;
+}
