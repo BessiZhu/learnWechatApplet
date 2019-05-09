@@ -1,0 +1,86 @@
+/* pages/articleInfo/articleInfo.wxss */
+.banner-box{
+    position: relative;
+}
+.banner-box .banner{
+    width:100%;
+}
+.control-box{
+    position: absolute;
+    bottom:-80rpx;
+    left:50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background:#fff;
+    padding:30rpx 30rpx 0;
+}
+.control-box .title{
+    font-size: 48rpx;
+}
+.right-btn{
+    text-align: right;
+}
+
+
+
+
+.btn-box text{
+    font-size: 28rpx;
+}
+.card-box{
+    background:#d8d8d8;
+    padding:30rpx 30rpx 0;
+}
+.card-box:first-of-type{
+    padding-top:120rpx;
+}
+.card-box:last-of-type{
+    padding-bottom:30rpx;
+}
+.card-title, .card-content, .card-footer{
+    display: block;
+    background:#fff;
+    box-sizing: border-box;
+}
+.card-title{
+    padding:10rpx;
+}
+.card-title image{
+    width:80rpx;
+    height:80rpx;
+    border-radius: 50%;
+    vertical-align:middle;
+    margin-right:10rpx;
+}
+.card-title text{
+    font-size:28rpx;
+    color:#999;
+}
+.card-content > image{
+    width:100%;
+    box-sizing: border-box;
+}
+.card-content .inner-content{
+    padding:30rpx;
+}
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    margin:0;
+    padding:0 30rpx;
+}
+.right-btn image{
+    border:none;
+    width:40rpx;
+    height:40rpx;
+    padding:0 10rpx;
+}
+.right-btn button{
+    display: inline;
+    border:none;
+    background:transparent;
+    padding:0;
+}
+.right-btn button::after{
+    border:none;
+}

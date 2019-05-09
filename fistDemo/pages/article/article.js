@@ -5,12 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listLike: {
-      0: true,
-      1: false,
-      2: false,
-      3: true
-    }
+ 
   },
 
   /**
@@ -32,7 +27,7 @@ Page({
     var index = e.currentTarget.dataset.articleindex;
     var listLike = this.data.listLike;
     var isLike = !listLike[index];
-    listLike[index] = !isLike;
+    listLike[index] = isLike;
     this.setData({
       listLike: listLike
     })
@@ -75,6 +70,12 @@ Page({
     }
     this.setData({
       listLike: listLikeStorage
+    })
+  },
+  toInfoTap: function(e){
+    var articletypeid = e.currentTarget.dataset.articletypeid;
+    wx.navigateTo({
+      url:"../articleInfo/articleInfo?typeId="+articletypeid
     })
   },
   /**

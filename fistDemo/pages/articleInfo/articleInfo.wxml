@@ -1,18 +1,21 @@
-<!-- pages/article/article.wxml -->
-<!-- <text>pages/article/article.wxml</text> -->
-<view class="article-container">
-    <view class="title-box">
-        <text class="title">{{recommend.date}}</text>
-        <text class="des">
-            {{recommend.title}}
-        </text>
-        <image src="{{recommend.imgSrc}}" />
+<!--pages/articleInfo/articleInfo.wxml-->
+<!-- <text>pages/articleInfo/articleInfo.wxml</text> -->
+<view class="articleInfo-container">
+    <view class="banner-box">
+        <image class="banner" mode="widthFix" src="{{bannerbox.imgSrc}}" />
+        <view class="control-box">
+            <text class="title">{{bannerbox.title}}</text>
+            <view class="right-btn">
+                <button open-type="share">
+                    <image class="relay" src="../../image/icon/Icon_relay.png" />
+                </button>
+                <image bindtap="moreTap" 
+                data-articleType="{{item.articleType}}" 
+                class="more" src="../../image/icon/Icon_more.png" />               
+            </view>
+        </view>
     </view>
-    <view class="btn-box">
-        <text class="add">+</text>
-        <text bindtap="toInfoTap" data-articleTypeId="{{item.typeId}}" wx:for="{{markType}}" wx:key="typeId">{{item.type}}</text>
-        <text>...</text>
-    </view>
+    
     <view class="card-box" wx:for="{{articleList}}" wx:key="id">
         <view class="card-title">
             <image src="{{item.markPeopleAvatar}}" />
@@ -25,7 +28,7 @@
             </view>
         </view>
         <view class="btn-box card-footer">
-            <text>{{item.articleType}}</text>
+            <text>{{item.publishTime}}</text>
             <view class="right-btn">
                 <image bindtap="moreTap" 
                 data-articleType="{{item.articleType}}" 
