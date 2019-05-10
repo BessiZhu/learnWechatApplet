@@ -1,4 +1,6 @@
 // pages/article/article.js
+var request = require('../../utils/request.js');
+
 Page({
 
   /**
@@ -35,33 +37,57 @@ Page({
   },
   getData: function(){
     var that = this;
-    wx.request({
-      url:'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getRecommendInfo',
+    request({
+      url:'/getRecommendInfo',
       success: function(res){
-        // console.log(res)
         that.setData({
-          recommend: res.data.data
+          recommend: res
         })
       }
-    })
-    wx.request({
-      url:'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getMarkTypeList',
+    });
+    request({
+      url:'/getMarkTypeList',
       success: function(res){
-        // console.log(res)
         that.setData({
-          markType: res.data.data
+          markType: res
         })
       }
-    })
-    wx.request({
-      url:'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getHomeArticleList',
+    });
+    request({
+      url:'/getHomeArticleList',
       success: function(res){
-        // console.log(res.data.data)
         that.setData({
-          articleList: res.data.data
+          articleList: res
         })
       }
-    })
+    });
+    // wx.request({
+    //   url:'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getRecommendInfo',
+    //   success: function(res){
+    //     // console.log(res)
+    //     that.setData({
+    //       recommend: res.data.data
+    //     })
+    //   }
+    // })
+    // wx.request({
+    //   url:'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getMarkTypeList',
+    //   success: function(res){
+    //     // console.log(res)
+    //     that.setData({
+    //       markType: res.data.data
+    //     })
+    //   }
+    // })
+    // wx.request({
+    //   url:'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getHomeArticleList',
+    //   success: function(res){
+    //     // console.log(res.data.data)
+    //     that.setData({
+    //       articleList: res.data.data
+    //     })
+    //   }
+    // })
   },
   getLikeData: function(){
     var listLikeStorage = wx.getStorageSync("listLike");

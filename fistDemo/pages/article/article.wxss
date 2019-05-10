@@ -1,4 +1,5 @@
 /* pages/article/article.wxss */
+@import "../common-list.wxss";
 .article-container{
     padding:20rpx;
 }
@@ -33,9 +34,7 @@
 .title-box image{
     width:100%;
 }
-.btn-box{
-    margin:30rpx 0;
-}
+
 .btn-box text{
     border:2rpx solid #000;
     padding:10rpx 20rpx;
@@ -47,58 +46,4 @@
 .btn-box text.add{
     background:#000;
     color:#fff;
-}
-.card-box{
-    background:#d8d8d8;
-    padding:30rpx 30rpx 0;
-}
-.card-box:last-of-type{
-    padding-bottom:30rpx;
-}
-.card-title, .card-content, .card-footer{
-    display: block;
-    background:#fff;
-    box-sizing: border-box;
-}
-.card-title{
-    padding:10rpx;
-}
-.card-title image{
-    width:80rpx;
-    height:80rpx;
-    border-radius: 50%;
-    vertical-align:middle;
-    margin-right:10rpx;
-}
-.card-title text{
-    font-size:28rpx;
-    color:#999;
-}
-.card-content > image{
-    width:100%;
-    box-sizing: border-box;
-}
-.card-content .inner-content{
-    padding:30rpx;
-}
-.card-footer{
-    display: flex;
-    justify-content: space-between;
-    margin:0;
-    padding:0 30rpx;
-}
-.right-btn image{
-    border:none;
-    width:40rpx;
-    height:40rpx;
-    padding:0 10rpx;
-}
-.right-btn button{
-    display: inline;
-    border:none;
-    background:transparent;
-    padding:0;
-}
-.right-btn button::after{
-    border:none;
 }

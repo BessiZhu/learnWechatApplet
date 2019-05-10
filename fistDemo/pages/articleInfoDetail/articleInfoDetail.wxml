@@ -1,0 +1,21 @@
+<!--pages/articleInfoDetail/articleInfoDetail.wxml-->
+<!-- <text>pages/articleInfoDetail/articleInfoDetail.wxml</text> -->
+<view class="detail-container">
+    <view class="title-box">
+        <text>我是标题我是标题</text>
+    </view>
+     <view class="author">
+        <text>作者</text>
+        <text>10月13日</text>
+    </view>
+    <view class="media-box">
+        <image src="../../image/icon/Icon_relay.png"></image>
+    </view>
+    <view class="content-box">
+        <text>我是文字我是文字我是文字我是文字我是文是文字文字我是文字我是文字我是我是文字我是文字我是文字我是文字</text>
+    </view>
+    <view class="read-box">
+        <text>阅读</text>
+        <text>999</text>
+    </view>
+</view>

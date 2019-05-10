@@ -1,4 +1,4 @@
-<!--pages/articleInfo/articleInfo.wxml-->
+<!-- pages/articleInfo/articleInfo.wxml -->
 <!-- <text>pages/articleInfo/articleInfo.wxml</text> -->
 <view class="articleInfo-container">
     <view class="banner-box">
@@ -9,35 +9,32 @@
                 <button open-type="share">
                     <image class="relay" src="../../image/icon/Icon_relay.png" />
                 </button>
-                <image bindtap="moreTap" 
-                data-articleType="{{item.articleType}}" 
-                class="more" src="../../image/icon/Icon_more.png" />               
+                <image bindtap="moreTap" data-articleType="{{item.articleType}}" class="more" src="../../image/icon/Icon_more.png" />
             </view>
         </view>
     </view>
-    
-    <view class="card-box" wx:for="{{articleList}}" wx:key="id">
-        <view class="card-title">
-            <image src="{{item.markPeopleAvatar}}" />
-            <text>{{item.markPeople}}等{{item.markCount}}人mark了</text>
-        </view>
-        <view class="card-content">
-            <image mode="widthFix" src="{{item.articleImgSrc}}" />
-            <view class="inner-content">
-                <text>{{item.articleTitle}}</text>
+    <view>
+        <view class="card-box" wx:for="{{articleList}}" wx:key="id" bindtap="toDetailTap" data-articleId="{{item.id}}">
+            <view class="card-title">
+                <image src="{{item.markPeopleAvatar}}" />
+                <text>{{item.markPeople}}等{{item.markCount}}人mark了</text>
             </view>
-        </view>
-        <view class="btn-box card-footer">
-            <text>{{item.publishTime}}</text>
-            <view class="right-btn">
-                <image bindtap="moreTap" 
-                data-articleType="{{item.articleType}}" 
-                class="more" src="../../image/icon/Icon_more.png" />
-                <button open-type="share">
-                    <image class="relay" src="../../image/icon/Icon_relay.png" />
-                </button>
-                <image bindtap="onlikeTap" data-articleIndex="{{index}}" wx:if="{{listLike[index]}}" src="../../image/icon/Icon_circle_fill.png" />
-                <image bindtap="onlikeTap" data-articleIndex="{{index}}" wx:else src="../../image/icon/Icon_circle.png" />
+            <view class="card-content">
+                <image mode="widthFix" src="{{item.articleImgSrc}}" />
+                <view class="inner-content">
+                    <text>{{item.articleTitle}}</text>
+                </view>
+            </view>
+            <view class="btn-box card-footer">
+                <text>{{item.publishTime}}</text>
+                <view class="right-btn">
+                    <image bindtap="moreTap" data-articleType="{{item.articleType}}" class="more" src="../../image/icon/Icon_more.png" />
+                    <button open-type="share">
+                        <image class="relay" src="../../image/icon/Icon_relay.png" />
+                    </button>
+                    <image bindtap="onlikeTap" data-articleIndex="{{index}}" wx:if="{{listLike[index]}}" src="../../image/icon/Icon_circle_fill.png" />
+                    <image bindtap="onlikeTap" data-articleIndex="{{index}}" wx:else src="../../image/icon/Icon_circle.png" />
+                </view>
             </view>
         </view>
     </view>

@@ -1,4 +1,6 @@
 // pages/articleInfo/articleInfo.js
+var request = require('../../utils/request.js');
+
 Page({
 
   /**
@@ -13,29 +15,51 @@ Page({
    */
   onLoad: function (options) {
     var typeId = options.typeId;
-    console.log(typeId)
+    // console.log(typeId)
     this.getData(typeId);
     
   },
   getData: function(typeId){
     var that = this;
-    wx.request({
-      url:'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getArticleTypeTitleInfo/'+typeId,
+    request({
+      url:'/getArticleTypeTitleInfo/'+typeId,
       success: function(res){
-        // console.log(res)
         that.setData({
-          bannerbox:res.data.data
+          bannerbox: res
         })
       }
-    })
-    wx.request({
-      url:'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getArticleTypeList/'+typeId,
+    });
+    request({
+      url:'/getArticleTypeList/'+typeId,
       success: function(res){
-        // console.log(res)
         that.setData({
-          articleList: res.data.data
+          articleList: res
         })
       }
+    });
+    // wx.request({
+    //   url:'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getArticleTypeTitleInfo/'+typeId,
+    //   success: function(res){
+    //     // console.log(res)
+    //     that.setData({
+    //       bannerbox:res.data.data
+    //     })
+    //   }
+    // })
+    // wx.request({
+    //   url:'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getArticleTypeList/'+typeId,
+    //   success: function(res){
+    //     // console.log(res)
+    //     that.setData({
+    //       articleList: res.data.data
+    //     })
+    //   }
+    // })
+  },
+  toDetailTap: function(e){
+    var articleId = e.currentTarget.dataset.articleid;
+    wx.navigateTo({
+      url:'../articleInfoDetail/articleInfoDetail?articleId=' + articleId
     })
   },
   /**

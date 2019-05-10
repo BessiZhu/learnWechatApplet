@@ -2,6 +2,7 @@
   "pages": [
     "pages/article/article",
     "pages/articleInfo/articleInfo",
+    "pages/articleInfoDetail/articleInfoDetail",
     "pages/index/index",
     "pages/second/second"
   ]
