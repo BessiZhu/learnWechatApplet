@@ -1,21 +1,60 @@
-<!--pages/articleInfoDetail/articleInfoDetail.wxml-->
+<!-- pages/articleInfoDetail/articleInfoDetail.wxml -->
 <!-- <text>pages/articleInfoDetail/articleInfoDetail.wxml</text> -->
+<wxs src="../../utils/indent.wxs" module="indent"></wxs>
 <view class="detail-container">
     <view class="title-box">
-        <text>我是标题我是标题</text>
+        <text>{{articleDetail.title}}</text>
     </view>
-     <view class="author">
-        <text>作者</text>
-        <text>10月13日</text>
+    <view class="author">
+        <text>{{articleDetail.author}}</text>
+        <text>{{articleDetail.publishTime}}</text>
     </view>
     <view class="media-box">
-        <image src="../../image/icon/Icon_relay.png"></image>
+        <!-- <swiper class="banner" indicator-dots="{{true}}" autoplay="{{true}}" interval="2000">
+            <swiper-item wx:for="{{articleDetail.banner}}" wx:key="id">
+                <image src="{{item}}"></image>
+            </swiper-item>
+        </swiper> -->
+
+        <!-- <video id="myVideo" class="video" src="{{articleDetail.video.src}}">
+            <cover-view class="controls" wx:if="{{!coverHidden}}">
+                <cover-image class="img" src="{{articleDetail.video.poster}}" />
+                <cover-view class="control-btn" bind:tap="videoPlayTap">
+                    <cover-image class="img" src="../../image/icon/play.png" />
+                    <cover-view class="time">{{articleDetail.video.duration}}</cover-view>
+                </cover-view>
+            </cover-view>
+        </video> -->
+
+        <view class="audio-box">
+            <view class="audio-controler">
+                <image bind:tap="audioPlayTap" wx:if="{{playing}}" src="../../image/icon/bofang.png"></image>
+                <image bind:tap="audioPlayTap" wx:else src="../../image/icon/zanting.png"></image>
+
+            </view>
+            <view class="audio-info">
+                <view class="audio-title">
+                    <text>{{articleDetail.audio.audioTitle}}</text>
+                </view>
+                <view class="audio-from">
+                    <text>{{articleDetail.audio.from}}</text>
+                </view>
+                <view class="audio-progress">
+                    <progress percent="0" stroke-width="2" active-color="#1296db" />
+                    <view class="progress-circle"></view>
+                </view>
+                <view class="audio-time">
+                    <text>00:00</text>
+                    <text>{{articleDetail.audio.duration}}</text>
+                </view>
+            </view>
+        </view>
     </view>
     <view class="content-box">
-        <text>我是文字我是文字我是文字我是文字我是文是文字文字我是文字我是文字我是我是文字我是文字我是文字我是文字</text>
+        <text decode="{{true}}">{{indent(articleDetail.content)}}</text>
     </view>
     <view class="read-box">
         <text>阅读</text>
-        <text>999</text>
+        <text>{{articleDetail.readNum}}</text>
     </view>
 </view>

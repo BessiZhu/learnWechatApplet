@@ -1,1 +1,119 @@
 /* pages/articleInfoDetail/articleInfoDetail.wxss */
+.detail-container{
+    padding:30rpx 20rpx;
+    box-sizing: border-box;
+}
+.title-box text{
+    font-size:44rpx;
+    line-height: 80rpx;
+}
+.author text{
+    font-size: 28rpx;
+    color:#666;
+    padding-right:20rpx;
+}
+.content-box{
+    text-indent: 60rpx;
+}
+.content-box text{
+    font-size: 30rpx;
+}
+.media-box,.content-box,.read-box{
+    margin-top:40rpx;
+}
+.read-box text{
+    font-size:28rpx;
+    padding-right:20rpx;
+}
+/* media-box */
+.media-box{
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+/* banner */
+.banner, .video{
+  width:100%;
+  height:500rpx;
+}
+.banner image{
+  width:100%;
+  height:100%;
+}
+/* video */
+.controls {
+    width:100%;
+    height:100%;
+    background:red;
+    position: relative;
+    display: flex;
+  }
+  .control-btn{
+      position: absolute;
+      top:50%;
+      left:50%;
+      width:100rpx;
+      height:100rpx;
+      background-color:rgba(0,0,0,.6);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(-50rpx) translateY(-50rpx);
+  }
+  .control-btn .img{
+    width:30rpx;
+      height:30rpx;
+  }
+  .control-btn .time{
+    font-size:24rpx;
+    color:#fff;
+  }
+ /* audio */
+ .audio-box{
+     display: flex;
+     align-items: center;
+     padding:30rpx;
+     margin:0 20rpx;
+     background:#fdfdfd;
+     border:1px solid #f2f2f2;
+     border-radius: 4rpx;
+ }
+ .audio-controler{
+     margin-right:40rpx;
+ }
+ .audio-controler image{
+    width:80rpx;
+    height:80rpx;
+}
+.audio-title text{
+    font-size: 36rpx;
+}
+.audio-from text{
+    font-size: 28rpx;
+    color:#666;
+}
+.audio-progress{
+    position: relative;
+    margin-top:20rpx;
+    margin-bottom: 20rpx;
+    width:520rpx;
+}
+.progress-circle{
+    position: absolute;
+    top:50%;
+    margin-top:-10rpx;
+    width:20rpx;
+    height:20rpx;
+    border-radius:50%;
+    background-color:#1296db;
+}
+.audio-time{
+    display: flex;
+    justify-content: space-between;
+}
+.audio-time text{
+    font-size: 24rpx;
+    color:#666;
+}

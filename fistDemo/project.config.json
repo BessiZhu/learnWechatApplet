@@ -9,16 +9,18 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.3",
 	"appid": "wxaa2d462ae42a5dec",
 	"projectname": "fistDemo",
+	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
-	"isGameTourist": false,
+	"scripts": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,13 +30,30 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "读书标签",
+					"pathName": "pages/articleInfo/articleInfo",
+					"query": "typeId=3"
+				},
+				{
+					"id": 1,
+					"name": "读书详情标签",
+					"pathName": "pages/articleInfoDetail/articleInfoDetail",
+					"query": "articleId=11",
+					"scene": null
+				}
+			]
 		}
 	}
 }
