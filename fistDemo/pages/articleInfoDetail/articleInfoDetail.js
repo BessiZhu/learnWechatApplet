@@ -1,5 +1,6 @@
 // pages/articleInfoDetail/articleInfoDetail.js
 var request = require('../../utils/request.js');
+var audio = wx.getBackgroundAudioManager()
 Page({
 
   /**
@@ -7,15 +8,17 @@ Page({
    */
   data: {
     coverHidden: false,
-    playing:false
+    playing: false,
+    audioCurTime: 0,
+    progressPercent: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getData(options.articleId);
-    this.audioPlayTap();
+    this.getData(options.articleId)
+    audio.stop()
   },
   getData: function (options) {
     var that = this;
@@ -37,19 +40,63 @@ Page({
     this.videoCtx.play();
   },
   audioPlayTap: function () {
-    var audio = wx.getBackgroundAudioManager();
-    audio.title = '此时此刻';
-    audio.epname = '此时此刻';
-    audio.singer = '许巍';
+    var playing = this.data.playing
+    audio.title = '此时此刻'
+    audio.epname = '此时此刻'
+    audio.singer = '许巍'
     audio.coverImgUrl = 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000';
-    audio.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46';
-    console.log(this.playing)
+
+    if (!playing) {
+      audio.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46';
+    } else {
+      audio.pause()
+    }
     this.setData({
-      playing: !this.playing
+      playing: !playing
     })
-    console.log(this.playing)
+    
+    this.listenPlayState()
+    this.updateAudioData()
   },
-  /**
+  listenPlayState: function () {
+    var that = this
+    audio.onPlay(function () {
+      that.setData({
+        playing: false
+      })
+    })
+    audio.onPause(function () {
+      that.setData({
+        playing: true
+      })
+    })
+    audio.onStop(function () {
+      that.setData({
+        playing: true
+      })
+    })
+    audio.onEnded(function () {
+      that.setData({
+        playing: true
+      })
+    })
+  },
+  updateAudioData: function(){
+    var that = this
+    var duration = this.data.articleDetail.audio.duration
+    
+    audio.onTimeUpdate(function() {
+      var audioCurTime = that.data.audioCurTime
+      var percent = audioCurTime / duration
+      var progressPercent = percent * 100
+      
+      that.setData({
+        audioCurTime: audio.currentTime.toFixed(),
+        progressPercent: progressPercent
+      })
+    }) 
+  },
+   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {

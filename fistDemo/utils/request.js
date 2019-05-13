@@ -1,7 +1,10 @@
+// 传参形式
 // obj = {
 //     url:'',
 //     success: function(res){}
 // }
+
+// 封装请求数据函数
 var baseUrl = 'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine';
 function request(params){
     wx.request({

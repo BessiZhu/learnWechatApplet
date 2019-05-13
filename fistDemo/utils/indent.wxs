@@ -1,7 +1,9 @@
+// 文字首行缩进方法
 var indent = function(text){
     if(!text){
         return;
     }
+    // 正则
     var reg = getRegExp('\\n', 'g');
     return text.replace(reg, "\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
 };

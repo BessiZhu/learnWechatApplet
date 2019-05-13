@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/article/article",
     "pages/articleInfoDetail/articleInfoDetail",
     "pages/articleInfo/articleInfo",
-    "pages/index/index",
     "pages/second/second"
-  ]
+  ],
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": ["audio"]
 }
