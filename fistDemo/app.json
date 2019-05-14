@@ -1,11 +1,16 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/article/article",
-    "pages/articleInfoDetail/articleInfoDetail",
     "pages/articleInfo/articleInfo",
-    "pages/second/second"
+    "pages/articleInfoDetail/articleInfoDetail",
+    "pages/second/second",
+    "pages/index/index"    
   ],
-  "sitemapLocation": "sitemap.json",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
   "requiredBackgroundModes": ["audio"]
 }

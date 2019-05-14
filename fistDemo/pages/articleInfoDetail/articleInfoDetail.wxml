@@ -1,6 +1,7 @@
 <!-- pages/articleInfoDetail/articleInfoDetail.wxml -->
 <!-- <text>pages/articleInfoDetail/articleInfoDetail.wxml</text> -->
 <wxs src="../../utils/indent.wxs" module="indent"></wxs>
+<wxs src="../../utils/format.wxs" module="format"></wxs>
 <view class="detail-container">
     <view class="title-box">
         <text>{{articleDetail.title}}</text>
@@ -10,13 +11,13 @@
         <text>{{articleDetail.publishTime}}</text>
     </view>
     <view class="media-box">
-        <!-- <swiper class="banner" indicator-dots="{{true}}" autoplay="{{true}}" interval="2000">
+        <swiper wx:if="{{articleDetail.banner[0]}}" class="banner" indicator-dots="{{true}}" autoplay="{{true}}" interval="2000">
             <swiper-item wx:for="{{articleDetail.banner}}" wx:key="id">
                 <image src="{{item}}"></image>
             </swiper-item>
-        </swiper> -->
+        </swiper>
 
-        <!-- <video id="myVideo" class="video" src="{{articleDetail.video.src}}">
+        <video wx:elif="{{articleDetail.video.src}}" id="myVideo" class="video" src="{{articleDetail.video.src}}">
             <cover-view class="controls" wx:if="{{!coverHidden}}">
                 <cover-image class="img" src="{{articleDetail.video.poster}}" />
                 <cover-view class="control-btn" bind:tap="videoPlayTap">
@@ -24,9 +25,9 @@
                     <cover-view class="time">{{articleDetail.video.duration}}</cover-view>
                 </cover-view>
             </cover-view>
-        </video> -->
+        </video>
 
-        <view class="audio-box">
+        <view wx:elif="{{articleDetail.audio.src}}" class="audio-box">
             <view class="audio-controler">
                 <image bindtap="audioPlayTap" wx:if="{{!playing}}" src="../../image/icon/bofang.png"></image>
                 <image bindtap="audioPlayTap" wx:else src="../../image/icon/zanting.png"></image>
@@ -39,12 +40,12 @@
                     <text>{{articleDetail.audio.from}}</text>
                 </view>
                 <view class="audio-progress">
-                    <progress percent="{{progressPercent}}" stroke-width="2" active-color="#1296db" />
-                    <view class="progress-circle"></view>
+                    <progress style="width:{{progressWidth}}rpx" percent="{{progressPercent}}" stroke-width="2" active-color="#1296db" />
+                    <view bind:touchstart="onAudioCircleStart" bind:touchmove="onAudioCircleMove" class="progress-circle" style="left:{{circleLeft}}rpx"></view>
                 </view>
                 <view class="audio-time">
-                    <text>{{audioCurTime}}</text>
-                    <text>{{articleDetail.audio.duration}}</text>
+                    <text>{{format(audioCurTime)}}</text>
+                    <text>{{format(articleDetail.audio.duration)}}</text>
                 </view>
             </view>
         </view>
@@ -57,3 +58,4 @@
         <text>{{articleDetail.readNum}}</text>
     </view>
 </view>
+

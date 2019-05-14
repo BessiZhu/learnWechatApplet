@@ -1,0 +1,11 @@
+    // 设置时间格式 00:00
+    var format = function(sec){
+        var minute = Math.floor(sec / 60)
+        var second = sec % 60
+
+        minute = minute < 10 ? '0' + minute : minute
+        second = second < 10 ? '0' + second : second
+       
+        return minute + ':' + second
+    }
+    module.exports = format
