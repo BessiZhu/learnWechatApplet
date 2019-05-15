@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "bigImgCmp": "/components/bigImg/cmp",
+    "pureTextCmp": "/components/pureText/cmp",
+    "imgTextCmp": "/components/imgText/cmp",
+    "nineImgCmp": "/components/nineImg/cmp",
+    "videoCmp": "/components/video/cmp"
+
+  }
 }

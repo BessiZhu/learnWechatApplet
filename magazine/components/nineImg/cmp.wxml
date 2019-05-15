@@ -1,0 +1,17 @@
+<!--components/nineImg/cmp.wxml-->
+<!-- <text>components/nineImg/cmp.wxml</text> -->
+<view class="container">
+    <view class="img-box">
+        <image wx:for="{{imgArr}}" 
+        wx:key="this" 
+        catch:tap="enlargeImg" 
+        data-imgindex="{{index}}"
+        wx:if="{{index < 9}}"
+        class="img" 
+        src="{{item}}" />
+        <text class="num" wx:if="{{imgArr.length > 9}}">{{imgArr.length}}</text>
+    </view>
+    <view class="text-box">
+        <text>{{mainTitle}}绝美风景图美绝美风景图美绝美风景图美绝美风景图美</text>
+    </view>
+</view>

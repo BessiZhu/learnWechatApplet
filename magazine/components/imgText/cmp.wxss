@@ -1,0 +1,27 @@
+/* components/imgText/cmp.wxss */
+.container{
+    padding:10rpx 30rpx;
+    display: flex;
+}
+.text-box{
+    flex:2;
+    display: flex;
+    flex-direction:column;
+    margin-right:30rpx;
+}
+.img-box{
+    flex:1;
+}
+.title{
+    font-weight: 400;
+    font-size: 40rpx;
+}
+.head{
+    font-size: 28rpx;
+    color:#666;
+    letter-spacing:2rpx;
+    margin-top:20rpx;
+}
+.img{
+    width:100%;
+}

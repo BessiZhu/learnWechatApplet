@@ -1,0 +1,15 @@
+/* components/bigImg/cmp.wxss */
+.container{
+    display: flex;
+    flex-direction:column;
+}
+.img{
+    width:100%;
+}
+.txt{
+    padding:30rpx 10rpx;
+    font-size:40rpx;
+    letter-spacing: 1rpx;
+    font-weight: 400;
+    text-indent: 2rem;
+}
