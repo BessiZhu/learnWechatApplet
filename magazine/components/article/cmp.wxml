@@ -1,0 +1,16 @@
+<!-- components/article/cmp.wxml -->
+<!-- <text>components/article/cmp.wxml</text> -->
+<view class="container">
+    <view class="mark-box">
+        <image class="img" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2549721190,228932466&fm=27&gp=0.jpg"></image>
+        <text class="text">lily等9人mark了</text>
+    </view>
+    <view>
+        <bigImgCmp wx:if="{{type == 0}}" img-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3300305952,1328708913&fm=27&gp=0.jpg" main-title="Observer模式定义对象间的一对多的依赖关系"></bigImgCmp>
+        <nineImgCmp wx:elif="{{type == 1}}"></nineImgCmp>
+        <imgTextCmp wx:elif="{{type == 2}}" main-title="百度图片使用世界前沿的人工智能技术，为用户甄选海量的高清美图。" sub-head="用更流畅、更快捷、更精准的搜索体验，带你去发现多彩的世界" img-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2153937626,1074119156&fm=27&gp=0.jpg"></imgTextCmp>
+        <videoCmp wx:elif="{{type == 3}}" video-id="video01" src="https://video.xuexi.cn/video/1004/p/5f4f6391e7f808f03b60f750221a0b0c-eb930d2d13ab482d8cbb937f3b7731c8-2.mp4" poster="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557919757757&di=e33c78aeb0764975dec075d465e755d5&imgtype=0&src=http%3A%2F%2Fs0.hao123img.com%2Fres%2Fr%2Fimage%2F2014-04-09%2F2d2aaa2b9a00f0730b369d1f6f0e3c8b.gif" duration="41`" main-title="在新页面中全屏预览图片。预览的过程中用户可以进行保存图片、发送给朋友等操作。"></videoCmp>
+        <pureTextCmp wx:else main-title="海词词典,最权威的学习词典,专业出版纯净的英文,纯净翻译,纯净英语怎么说等详细讲解。海词词典:学习变容易,记忆很深刻。" sub-head="天真的人 artlessness n.天真"></pureTextCmp>
+    </view>
+    <view></view>
+</view>

@@ -1,0 +1,16 @@
+/* components/article/cmp.wxss */
+.mark-box{
+    display: flex;
+    align-items: center;
+    padding:20rpx;
+}
+.mark-box .img{
+    width:60rpx;
+    height:60rpx;
+    border-radius: 50%;
+    margin-right:20rpx;
+}
+.mark-box .text{
+    font-size: 28rpx;
+    color:#666;
+}
