@@ -14,3 +14,16 @@
     font-size: 28rpx;
     color:#666;
 }
+.control-box{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:20rpx;
+}
+.more-and-like{
+    display:flex;
+}
+.box{
+    display: block;
+    margin-left: 25rpx;
+}

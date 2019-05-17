@@ -30,3 +30,53 @@ function showError(){
 }
 
 module.exports = request;
+
+
+
+
+
+// 优化后
+
+/*function request(url, success, method='GET', data={}){
+    wx.request({
+        url: baseUrl + url,
+        method: method,
+        data: data,
+        success:function(res){
+            if(res.data.code == 0){
+                success(res.data.data);
+            }else{
+                showError();
+            }
+        },
+        fail:function(){
+            showError()
+        }
+    })
+}*/
+
+
+// function request(params){
+    
+//     if(!params.method){
+//         params.method = 'GET'
+//     }
+//     if(!params.data){
+//         params.data = {}
+//     }
+//     wx.request({
+//         url: baseUrl + params.url,
+//         method: params.method,
+//         data: params.data,
+//         success:function(res){
+//             if(res.data.code == 0){
+//                 params.success(res.data.data);
+//             }else{
+//                 showError();
+//             }
+//         },
+//         fail:function(){
+//             showError()
+//         }
+//     })
+// }

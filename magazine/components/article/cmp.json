@@ -5,6 +5,9 @@
     "pureTextCmp": "/components/pureText/cmp",
     "imgTextCmp": "/components/imgText/cmp",
     "nineImgCmp": "/components/nineImg/cmp",
-    "videoCmp": "/components/video/cmp"
+    "videoCmp": "/components/video/cmp",
+    "moreCmp": "/components/more/cmp",
+    "likeCmp": "/components/like/cmp",
+    "tagCmp": "/components/tag/cmp"
   }
 }

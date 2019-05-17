@@ -12,6 +12,6 @@
 <tagCmp tag="心理" tag-id="01"></tagCmp>
 <moreCmp tag="心理"></moreCmp>
 <likeCmp is-like="true"></likeCmp> -->
-<articleCmp type="1"></articleCmp>
+<articleCmp article-list="{{articleList[2]}}"></articleCmp>
 
 </view>
