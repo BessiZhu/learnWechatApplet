@@ -2,8 +2,8 @@
 <!-- <text>components/article/cmp.wxml</text> -->
 <view class="container">
     <view class="mark-box">
-        <image class="img" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2549721190,228932466&fm=27&gp=0.jpg"></image>
-        <text class="text">lily等9人mark了</text>
+        <image class="img" src="{{articleList.mark.avatar}}"></image>
+        <text class="text">{{articleList.mark.people}}等{{articleList.mark.count}}人马克了</text>
     </view>
     <view>
         <bigImgCmp wx:if="{{articleList.type == 0}}" 
@@ -28,11 +28,11 @@
     </view>
     <view class="control-box">
         <view>
-            <tagCmp tag="心理"></tagCmp>
+            <tagCmp tag="{{articleList.tag}}" tag-id="{{articleList.tagId}}"></tagCmp>
         </view>
         <view class="more-and-like">
-            <moreCmp class="box" tag="心理"></moreCmp>
-            <likeCmp class="box" is-like="true"></likeCmp>
+            <moreCmp class="box" tag="{{articleList.tag}}"></moreCmp>
+            <likeCmp class="box" is-like="{{}}"></likeCmp>
         </view>
     </view>
 </view>

@@ -1,0 +1,38 @@
+/* components/recommend/cmp.wxss */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+
+.big-title {
+    position: relative;
+    font-size: 52rpx;
+    padding-bottom: 24rpx;
+    letter-spacing: 10rpx;
+}
+
+.big-title::after {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -57rpx;
+    width: 114rpx;
+    height: 4rpx;
+    background-color: #999;
+    content: '';
+}
+
+.title {
+    width: 700rpx;
+    text-align: center;
+    margin-top: 24rpx;
+    font-size: 28rpx;
+}
+
+.image {
+    margin: 50rpx 30rpx 20rpx;
+    width: 690rpx;
+}

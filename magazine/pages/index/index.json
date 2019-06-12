@@ -1,13 +1,17 @@
 {
-  "usingComponents": {
-    "bigImgCmp": "/components/bigImg/cmp",
-    "pureTextCmp": "/components/pureText/cmp",
-    "imgTextCmp": "/components/imgText/cmp",
-    "nineImgCmp": "/components/nineImg/cmp",
-    "videoCmp": "/components/video/cmp",
-    "moreCmp": "/components/more/cmp",
-    "likeCmp": "/components/like/cmp",
-    "articleCmp": "/components/article/cmp",
-    "tagCmp": "/components/tag/cmp"
-  }
+    "usingComponents": {
+        "bigImgCmp": "/components/bigImg/cmp",
+        "pureTextCmp": "/components/pureText/cmp",
+        "imgTextCmp": "/components/imgText/cmp",
+        "nineImgCmp": "/components/nineImg/cmp",
+        "videoCmp": "/components/video/cmp",
+        "moreCmp": "/components/more/cmp",
+        "likeCmp": "/components/like/cmp",
+        "articleCmp": "/components/article/cmp",
+        "articleListCmp": "/components/articleList/cmp",
+        "tagCmp": "/components/tag/cmp",
+        "navCmp": "/components/nav/cmp",
+        "recommendCmp": "/components/recommend/cmp"
+
+    }
 }

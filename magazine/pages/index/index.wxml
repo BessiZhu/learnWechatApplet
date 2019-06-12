@@ -12,6 +12,9 @@
 <tagCmp tag="心理" tag-id="01"></tagCmp>
 <moreCmp tag="心理"></moreCmp>
 <likeCmp is-like="true"></likeCmp> -->
-<articleCmp article-list="{{articleList[2]}}"></articleCmp>
+<!-- <articleCmp wx:for="{{articleList}}" wx:key="{{artId}}" article-list="{{item}}"></articleCmp> -->
 
+<navCmp></navCmp>
+<recommendCmp></recommendCmp>
+<articleListCmp article-list="{{articleList}}" more="{{getMore}}" magazine-id="{{magazineId}}"/>
 </view>

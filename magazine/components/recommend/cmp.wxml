@@ -1,0 +1,7 @@
+<!--components/recommend/cmp.wxml-->
+<!-- <text>components/recommend/cmp.wxml</text> -->
+<view class="container">
+    <text class="big-title">111</text>
+    <text class="title">第三方司法速度</text>
+    <image class="image" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1718395925,3485808025&fm=27&gp=0.jpg"></image>
+</view>
