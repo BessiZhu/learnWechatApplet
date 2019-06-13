@@ -14,7 +14,14 @@
 <likeCmp is-like="true"></likeCmp> -->
 <!-- <articleCmp wx:for="{{articleList}}" wx:key="{{artId}}" article-list="{{item}}"></articleCmp> -->
 
-<navCmp></navCmp>
-<recommendCmp></recommendCmp>
+<navCmp class="nav" catch:tap="onNav" />
+<recommendCmp class="recommend" recommend="{{recommendInfo}}" />
+<tagListCmp mark-list="{{markTypeList}}" >
+  <addCmp slot="before" class="add" />
+  <view slot="after" class="to-catalog" catch:tap="onCatalog">●●●</view>
+</tagListCmp>
 <articleListCmp article-list="{{articleList}}" more="{{getMore}}" magazine-id="{{magazineId}}"/>
+<view class="loading-container" wx:if="{{loading}}">
+  <loadingCmp class="loading" />
+</view>
 </view>

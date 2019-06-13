@@ -5,7 +5,7 @@
           wx:key="{{this}}"
           class="type {{index == magazineIndex ? 'active' : ''}}"
           data-index="{{index}}"
-          catch:tap="onTap"
+          bind:tap="onTap"
           id="{{'magazine' + index}}">{{item}}</text>
 
 </scroll-view>

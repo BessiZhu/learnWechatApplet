@@ -21,7 +21,8 @@ Component({
         markTypeList: [],
         recommendInfo: [],
         getMore: '',
-        magazineId: 0
+        magazineId: 0,
+        loading: true
     },
     /**
      * 组件的方法列表
@@ -29,12 +30,20 @@ Component({
     methods: {
         onLoad() {
             this._getData()
-            wx.showLoading()
+                // wx.showLoading()
         },
         onReachBottom() {
             this.setData({
                 getMore: random(20)
             })
+        },
+        onCatalog() {
+            wx.navigateTo({
+                url: "/pages/catalog/catalog"
+            })
+        },
+        onNav() {
+            console.log(1)
         },
         _getData() {
             const articleList = indexModel.getArticleList()
@@ -44,11 +53,17 @@ Component({
             Promise.all([articleList, markTypeList, recommendInfo]).then(res => {
                 // console.log(res[0])
                 this.setData({
-                    articleList: res[0],
-                    markTypeList: res[1],
-                    recommendInfo: res[2]
-                })
-                wx.hideLoading()
+                        articleList: res[0],
+                        markTypeList: res[1],
+                        recommendInfo: res[2]
+                    })
+                    // wx.hideLoading()
+                this._hideLoading()
+            })
+        },
+        _hideLoading() {
+            this.setData({
+                loading: false
             })
         }
     }

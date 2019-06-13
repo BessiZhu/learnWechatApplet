@@ -10,7 +10,10 @@
         "articleCmp": "/components/article/cmp",
         "articleListCmp": "/components/articleList/cmp",
         "tagCmp": "/components/tag/cmp",
+        "tagListCmp": "/components/tagList/cmp",
         "navCmp": "/components/nav/cmp",
+        "addCmp": "/components/add/cmp",
+        "loadingCmp": "/components/loading/cmp",
         "recommendCmp": "/components/recommend/cmp"
 
     }

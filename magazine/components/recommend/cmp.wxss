@@ -32,7 +32,37 @@
     font-size: 28rpx;
 }
 
-.image {
-    margin: 50rpx 30rpx 20rpx;
-    width: 690rpx;
+.image,
+.skeleton {
+    margin: 50rpx 0 20rpx;
+    width: 700rpx;
+    height: 750rpx;
+}
+
+.skeleton {
+    position: relative;
+    background: rgba(0, 0, 0, .3)
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -20rpx;
+    margin-top: -20rpx;
+    width: 40rpx;
+    height: 40rpx;
+    border: 10rpx solid #888;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
 }
