@@ -1,0 +1,6 @@
+<!--components/imgBtn/cmp.wxml-->
+<!-- <text>components/imgBtn/cmp.wxml</text> -->
+<button plain="{{true}}" class="container">
+	<image src="" />
+</button>
+

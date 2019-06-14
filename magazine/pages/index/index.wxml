@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- <bigImgCmp img-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3300305952,1328708913&fm=27&gp=0.jpg" main-title="Observer模式定义对象间的一对多的依赖关系"></bigImgCmp>
+	<!-- <bigImgCmp img-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3300305952,1328708913&fm=27&gp=0.jpg" main-title="Observer模式定义对象间的一对多的依赖关系"></bigImgCmp>
   <pureTextCmp main-title="海词词典,最权威的学习词典,专业出版纯净的英文,纯净翻译,纯净英语怎么说等详细讲解。海词词典:学习变容易,记忆很深刻。" sub-head="天真的人 artlessness n.天真"></pureTextCmp>
   <imgTextCmp main-title="百度图片使用世界前沿的人工智能技术，为用户甄选海量的高清美图。" sub-head="用更流畅、更快捷、更精准的搜索体验，带你去发现多彩的世界" img-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2153937626,1074119156&fm=27&gp=0.jpg"></imgTextCmp>
   <nineImgCmp></nineImgCmp>
@@ -12,16 +12,23 @@
 <tagCmp tag="心理" tag-id="01"></tagCmp>
 <moreCmp tag="心理"></moreCmp>
 <likeCmp is-like="true"></likeCmp> -->
-<!-- <articleCmp wx:for="{{articleList}}" wx:key="{{artId}}" article-list="{{item}}"></articleCmp> -->
+	<!-- <articleCmp wx:for="{{articleList}}" wx:key="{{artId}}" article-list="{{item}}"></articleCmp> -->
 
-<navCmp class="nav" catch:tap="onNav" />
-<recommendCmp class="recommend" recommend="{{recommendInfo}}" />
-<tagListCmp mark-list="{{markTypeList}}" >
-  <addCmp slot="before" class="add" />
-  <view slot="after" class="to-catalog" catch:tap="onCatalog">●●●</view>
-</tagListCmp>
-<articleListCmp article-list="{{articleList}}" more="{{getMore}}" magazine-id="{{magazineId}}"/>
-<view class="loading-container" wx:if="{{loading}}">
-  <loadingCmp class="loading" />
+	<navCmp class="nav" catch:nav="onNav" />
+	<recommendCmp class="recommend" recommend="{{recommendInfo}}" magazine-id="{{magazineId}}" />
+	<tagListCmp mark-list="{{markTypeList}}">
+		<addCmp slot="before" class="add" wx:if="{{magazineId == 0}}" />
+		<view
+		 slot="after"
+		 class="to-catalog"
+		 catch:tap="onCatalog"
+		 wx:if="{{magazineId == 0}}"
+		>●●●
+		</view>
+	</tagListCmp>
+	<articleListCmp article-list="{{articleList}}" more="{{getMore}}" magazine-id="{{magazineId}}" />
+	<view class="loading-container" wx:if="{{loading}}">
+		<loadingCmp class="loading" />
+	</view>
 </view>
-</view>
+

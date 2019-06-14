@@ -20,7 +20,11 @@ Component({
             value: '',
             observer: 'loadMore'
         },
-        magazineId: Number
+        magazineId: {
+            type: Number,
+            value: '',
+            observer: 'hasMoreData'
+        }
     },
 
     /**
@@ -49,6 +53,11 @@ Component({
                 this._setMoreData(res)
                 this._unLoadLock()
 
+            })
+        },
+        hasMoreData() {
+            this.setData({
+                noMoreData: false
             })
         },
         _isLock() {

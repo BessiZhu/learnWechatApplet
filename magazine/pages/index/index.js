@@ -38,17 +38,21 @@ Component({
             })
         },
         onCatalog() {
-            wx.navigateTo({
+            wx.switchTab({
                 url: "/pages/catalog/catalog"
             })
         },
-        onNav() {
-            console.log(1)
+        onNav(e) {
+            const magazineId = e.detail.index
+            this.setMagazineId(magazineId)
+            this.resetData()
+            this.scrollPageToTop()
+            this._getData(magazineId)
         },
-        _getData() {
-            const articleList = indexModel.getArticleList()
-            const markTypeList = indexModel.getMarkTypeList()
-            const recommendInfo = indexModel.getRecommendInfo()
+        _getData(magazineId) {
+            const articleList = indexModel.getArticleList(magazineId)
+            const markTypeList = indexModel.getMarkTypeList(magazineId)
+            const recommendInfo = indexModel.getRecommendInfo(magazineId)
 
             Promise.all([articleList, markTypeList, recommendInfo]).then(res => {
                 // console.log(res[0])
@@ -64,6 +68,24 @@ Component({
         _hideLoading() {
             this.setData({
                 loading: false
+            })
+        },
+        resetData() {
+            this.setData({
+                articleList: [],
+                markTypeList: [],
+                recommendInfo: []
+            })
+        },
+        scrollPageToTop() {
+            wx.pageScrollTo({
+                scrollTop: 0,
+                duration: 0
+            })
+        },
+        setMagazineId(magazineId) {
+            this.setData({
+                magazineId
             })
         }
     }

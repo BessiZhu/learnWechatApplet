@@ -1,14 +1,38 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/catalog/catalog"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/mark/mark",
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/catalog/catalog"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "selectedColor": "#000",
+        "list": [{
+                "pagePath": "pages/catalog/catalog",
+                "text": "目录",
+                "iconPath": "images/tab/catalog.png",
+                "selectedIconPath": "images/tab/catalog_selected.png"
+
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "杂志",
+                "iconPath": "images/tab/index.png",
+                "selectedIconPath": "images/tab/index_selected.png"
+            },
+            {
+                "pagePath": "pages/mark/mark",
+                "text": "马克",
+                "iconPath": "images/tab/mark.png",
+                "selectedIconPath": "images/tab/mark_selected.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
 }

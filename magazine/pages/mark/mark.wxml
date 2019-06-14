@@ -1,0 +1,25 @@
+<!--pages/mark/mark.wxml-->
+<!-- <text>pages/mark/mark.wxml</text> -->
+<view class="contaier">
+	<view class="user-container">
+		<view class="user-info">
+			<view class="user-name">{{userInfo.nickName}}</view>
+			<view class="user-avatar">
+				<image wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" />
+				<button
+				 wx:else
+				 class="get-user-info"
+				 open-type="getUserInfo"
+				 bindgetuserinfo="onGetUserInfo"
+				>
+					<image src="/images/mark/login.png" />
+				</button>
+			</view>
+		</view>
+		<view class="share">
+			<image src="/images/mark/relay.png" />
+		</view>
+	</view>
+	<articleListCmp/>
+</view>
+

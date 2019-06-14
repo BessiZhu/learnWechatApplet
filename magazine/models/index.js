@@ -6,14 +6,14 @@ class IndexModel extends Request {
             url: `/getIndexArticleList/${magazineId}/${start}`
         })
     }
-    getMarkTypeList() {
+    getMarkTypeList(magazineId = 0) {
         return this.getData({
-            url: '/getMarkTypeList/0'
+            url: `/getMarkTypeList/${magazineId}`
         })
     }
-    getRecommendInfo() {
+    getRecommendInfo(magazineId = 0) {
         return this.getData({
-            url: '/getRecommendInfo/0'
+            url: `/getRecommendInfo/${magazineId}`
         })
     }
 }
